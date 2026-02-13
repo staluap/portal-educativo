@@ -26,13 +26,12 @@ El proyecto cumple todas las características requeridas para las entregas prác
 - Visual Studio Code
 
 ## Cómo ejecutar
-1. Abrir la carpeta del proyecto desde el IDE que se prefiera
-2. Inicializar Apache y MySQL en XAMPP
-3. Identificar el fichero 'eduflow.sql' y copiar su contenido.
-4. Entrar desde el navegador a 'localhost/phpmyadmin' e insertar el script MySQL copiado
-5. Copiar la carpeta del proyecto en htdocs, renombrarla a 'eduflow'
-6. Entrar en 'localhost/eduflow' desde el navegador
-7. Usar las credenciales 'admin' y 'abcdef' para entrar por primera vez y crear nuevos usuarios
+1. Inicializar Apache y MySQL en XAMPP
+2. Identificar el fichero 'eduflow.sql' y copiar su contenido.
+3. Entrar desde el navegador a 'localhost/phpmyadmin' e insertar el script MySQL copiado
+4. Copiar la carpeta del proyecto en htdocs, renombrarla a 'eduflow'
+5. Entrar en 'localhost/eduflow' desde el navegador
+6. Usar las credenciales 'admin' y 'abcdef' para entrar por primera vez y crear nuevos usuarios
 
 ## Funcionalidades
 - Roles de usuario diferenciados (administrador, estudiante, profesor) con diferentes dashboards y opciones según el rol
@@ -90,13 +89,12 @@ The project meets all the requirements for the practical assignments of the subj
 - Visual Studio Code
 
 ## How to run
-1. Open the project folder from the preferred IDE.
-2. Start Apache and MySQL in XAMPP.
-3. Locate the 'eduflow.sql' file and copy its contents.
-4. Open 'localhost/phpmyadmin' in a browser and paste the MySQL script.
-5. Copy the project folder into 'htdocs' and rename it to 'eduflow'.
-6. Open 'localhost/eduflow' in the browser.
-7. Use the credentials 'admin' and 'abcdef' to log in for the first time and create new users.
+1. Start Apache and MySQL in XAMPP.
+2. Locate the 'eduflow.sql' file and copy its contents.
+3. Open 'localhost/phpmyadmin' in a browser and paste the MySQL script.
+4. Copy the project folder into 'htdocs' and rename it to 'eduflow'.
+5. Open 'localhost/eduflow' in the browser.
+6. Use the credentials 'admin' and 'abcdef' to log in for the first time and create new users.
 
 ## Features
 - Differentiated user roles (administrator, student, teacher) with different dashboards and options depending on the role
@@ -131,3 +129,4 @@ Once these points are implemented, it would be interesting to modify the databas
 ## Author
 - staluap / Paula Serrano Torrecillas
 - Associate Degree in Web Application Development Student
+
