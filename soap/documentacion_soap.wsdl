@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:xs="http://www.w3.org/2001/XMLSchema"
+             xmlns:tns="http://localhost/eduFlow/soap/soap_server.php"
+             name="ServicioTareas"
+             targetNamespace="http://localhost/eduFlow/soap/soap_server.php">
+
+  <types>
+    <xs:schema targetNamespace="http://localhost/eduFlow/soap/soap_server.php">
+
+      <xs:element name="getTareasRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="profesor" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+
+      <xs:element name="getTareasResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="tarea" maxOccurs="unbounded" minOccurs="0">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="titulo" type="xs:string"/>
+                  <xs:element name="descripcion" type="xs:string"/>
+                  <xs:element name="fecha_entrega" type="xs:string"/>
+                  <xs:element name="profesor" type="xs:string"/>
+                  <xs:element name="imagen" type="xs:string"/>
+                  <xs:element name="urgente" type="xs:string"/>
+                  <xs:element name="asignatura" type="xs:string"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+
+      <xs:element name="addTareaRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="titulo" type="xs:string"/>
+            <xs:element name="descripcion" type="xs:string"/>
+            <xs:element name="fecha_entrega" type="xs:string"/>
+            <xs:element name="profesor" type="xs:string"/>
+            <xs:element name="urgente" type="xs:string"/>
+            <xs:element name="asignatura" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+
+      <xs:element name="addTareaResponse" type="xs:string"/>
+
+      <xs:element name="deleteTareasRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="asignatura" type="xs:string"/>
+            <xs:element name="profesor" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+
+      <xs:element name="deleteTareasResponse" type="xs:string"/>
+
+    </xs:schema>
+  </types>
+
+  <message name="getTareasRequest">
+    <part name="parameters" element="tns:getTareasRequest"/>
+  </message>
+  <message name="getTareasResponse">
+    <part name="result" element="tns:getTareasResponse"/>
+  </message>
+
+  <message name="addTareaRequest">
+    <part name="parameters" element="tns:addTareaRequest"/>
+  </message>
+  <message name="addTareaResponse">
+    <part name="result" element="tns:addTareaResponse"/>
+  </message>
+
+  <message name="deleteTareasRequest">
+    <part name="parameters" element="tns:deleteTareasRequest"/>
+  </message>
+  <message name="deleteTareasResponse">
+    <part name="result" element="tns:deleteTareasResponse"/>
+  </message>
+
+  <portType name="ServicioTareasPortType">
+    <operation name="getTareas">
+      <input message="tns:getTareasRequest"/>
+      <output message="tns:getTareasResponse"/>
+    </operation>
+
+    <operation name="addTarea">
+      <input message="tns:addTareaRequest"/>
+      <output message="tns:addTareaResponse"/>
+    </operation>
+
+    <operation name="deleteTareas">
+      <input message="tns:deleteTareasRequest"/>
+      <output message="tns:deleteTareasResponse"/>
+    </operation>
+  </portType>
+
+  <binding name="ServicioTareasBinding" type="tns:ServicioTareasPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+    <operation name="getTareas">
+      <soap:operation soapAction="http://localhost/eduFlow/soap/soap_server.php/getTareas"/>
+      <input><soap:body use="literal"/></input>
+      <output><soap:body use="literal"/></output>
+    </operation>
+
+    <operation name="addTarea">
+      <soap:operation soapAction="http://localhost/eduFlow/soap/soap_server.php/addTarea"/>
+      <input><soap:body use="literal"/></input>
+      <output><soap:body use="literal"/></output>
+    </operation>
+
+    <operation name="deleteTareas">
+      <soap:operation soapAction="http://localhost/eduFlow/soap/soap_server.php/deleteTareas"/>
+      <input><soap:body use="literal"/></input>
+      <output><soap:body use="literal"/></output>
+    </operation>
+
+  </binding>
+
+  <service name="ServicioTareasService">
+    <port name="ServicioTareasPort" binding="tns:ServicioTareasBinding">
+      <soap:address location="http://localhost/eduFlow/soap/soap_server.php"/>
+    </port>
+  </service>
+
+</definitions>

@@ -1,0 +1,65 @@
+{
+	"info": {
+		"_postman_id": "961714cb-3486-49e7-8274-38dd450b663a",
+		"name": "eduFlow",
+		"description": "Agenda de Clases y Tareas para profesores y Alumnos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50605848",
+		"_collection_link": "https://universal-satellite-1516791.postman.co/workspace/785b147d-1110-4959-868d-4d6dc0c8fc54/collection/50605848-961714cb-3486-49e7-8274-38dd450b663a?action=share&source=collection_link&creator=50605848"
+	},
+	"item": [
+		{
+			"name": "GET",
+			"item": [
+				{
+					"name": "Listar Clases",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/Eduflow/rest/rest_server.php/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Eduflow",
+								"rest",
+								"rest_server.php",
+								""
+							]
+						},
+						"description": "En este método se recibe un JSON con todas las asignaturas y su horario del Modelo"
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Clases de un Profesor",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/Eduflow/rest/rest_server.php/María+López",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"Eduflow",
+								"rest",
+								"rest_server.php",
+								"María+López"
+							]
+						},
+						"description": "En este método se recibe un JSON con todas las asignaturas que estén asociadas a un profesor en específico. Para buscar se añade Nombre+Apellido con tildes incluidas tras la última barra \"/\" del archivo REST server. Admite minússulas y mayúsculas de forma indiferenciada."
+					},
+					"response": []
+				}
+			],
+			"description": "Directorio de Métodos de Listado y Lectura"
+		}
+	]
+}
